@@ -78,18 +78,38 @@
         h1 { 
         font-size: 2.2rem; /* 减小字号 */
         line-height: 1.3;
-        border-bottom: 2px solid var(--pri-black); /* 线条减薄 */
-        padding-bottom: 10px;
+        font-weight: 400;
+        font-style: italic;
+        border-bottom: 1px solid var(--pri-black); /* 线条减薄 */
+        padding-bottom: 15px;
         margin-bottom: 30px;
         display: block; /* 占据整行，但线条会比较长。如果想要短线，保持 inline-block */
-        font-style: italic; /* 增加知性美 */
+        letter-spacing: 0.02em;
     }
 
       /* 板块标题：Observations / Essays */
         h2 { font-size: 1.5rem; border-bottom: 1px solid var(--pri-black); padding-bottom: 5px; margin-top: 50px; magrin-bottom: 30px; }
 
-        .bio-text { font-size: 1.15rem; font-weight: 300; color: #444; max-width: 650px; }
-
+       .bio-text { 
+            font-size: 1.15rem; 
+            font-weight: 300; 
+            color: #444; 
+            max-width: 650px; /* 限制宽度，防止长行阅读疲劳 */
+            line-height: 1.8;
+            text-align: justify; /* 可选：两端对齐，更有报刊感 */
+        }
+        
+        /* 首字下沉样式 */
+        .bio-text::first-letter {
+            font-family: 'Philosopher', serif; /* 使用哲思体 */
+            font-size: 3.5rem;               /* 大小约为正文的三倍 */
+            font-weight: 700;
+            float: left;                     /* 核心：向左浮动让文字环绕 */
+            line-height: 1;                  /* 紧凑行高 */
+            padding-right: 12px;             /* 与后方文字的间距 */
+            margin-top: 4px;                 /* 微调顶部对齐 */
+            color: var(--pri-black);
+        }
        /* 标签：增加分类功能 */
         .tag {
             font-family: 'Inter', sans-serif;
@@ -98,7 +118,7 @@
             letter-spacing: 1px;
             color: var(--pri-grey);
             background: #CCCC66;
-            padding: 3px 8px;
+            padding: 3px 10px;
             margin-right: 10px;
             vertical-align: middle;
             display: inline-block;
@@ -107,8 +127,15 @@
             font-weight: 600;
             border-radius: 2px; /* 极小的圆角让它看起来不生硬 */
         }
-  
-      
+    /* 辅助身份说明 */
+      .affiliation {
+            font-size: 0.9rem;
+            color: var(--sec-grey);
+            margin-top: -20px;
+            margin-bottom: 20px;
+            font-style: normal;
+        }
+          
       /* 文章列表行：每一行“observation”或者“essay”的样式 */
         .entry {
           display: block;
@@ -160,7 +187,16 @@
 
     <section id="profile">
         <h2>Professional Profile</h2>
-        <p class="tagline">Capturing the nuances of social change.</p>
+        <h1>Capturing the nuances of social change.</h1>
+        <p class="affiliation">Social Science Observer & Researcher</p>
+
+        <div class="research-interests">
+            <span class="tag">Gender Equality</span>
+            <span class="tag">Labor Rights</span>
+            <span class="tag">Urban Sociology</span>
+            <span class="tag">Mental Health</span>
+        </div>
+        
         <p class="bio-text">
             I am a social science observer focusing on the intersection of <strong>economic life</strong> and <strong>mental health</strong>. 
             With a <strong>global perspective</strong>, my work is rooted in a commitment to <strong>gender equality</strong> and <strong>labor rights</strong>.
