@@ -127,6 +127,51 @@
             font-weight: 600;
             border-radius: 2px; /* 极小的圆角让它看起来不生硬 */
         }
+        
+        /* --- 移动端响应式调整 (针对屏幕宽度小于 600px 的设备) --- */
+        @media (max-width: 600px) {
+            /* 1. 缩小容器边距，给文字更多空间 */
+            .container {
+                padding: 40px 20px;
+            }
+
+            /* 2. 标题降噪：在手机上 3.2rem 太大了，改为更适合阅读的尺寸 */
+            h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+            }
+
+            /* 3. 导航栏改为垂直堆叠或更紧凑 */
+            nav {
+                flex-direction: column; /* 名字在上，链接在下 */
+                align-items: flex-start;
+                gap: 15px;
+                margin-bottom: 50px;
+            }
+
+            .nav-links a {
+                margin-left: 0;
+                margin-right: 15px;
+                font-size: 0.75rem;
+            }
+        
+            /* 4. 调整首字下沉：在小屏上稍微缩小，避免压迫感 */
+            .bio-text::first-letter {
+                font-size: 2.8rem;
+                padding-right: 8px;
+            }
+
+            /* 5. 关键词云自适应 */
+            .research-interests {
+                gap: 6px;
+            }
+            
+            .tag {
+                font-size: 0.6rem;
+                padding: 2px 6px;
+            }
+        }
+        
     /* 辅助身份说明 */
       .affiliation {
             font-size: 0.9rem;
