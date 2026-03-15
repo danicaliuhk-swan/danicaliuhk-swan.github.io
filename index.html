@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danica Liu|Obseverer of the World </title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* 1. 变量设置：方便后期一键改色，就像档案馆的标签，改一个地方，全站都会变 */
+        :root {
+            --pri-black: #1a1a1a;
+            --sec-grey: #666666;/* 次要文字色：用于日期和标签 */
+            --paper-bg: #f4f1ea; /* 背景颜色旧报纸 */
+            --border-color: #dfdfdf;
+        }
+
+        /* 2. 基础排版：模仿报纸的呼吸感 */
+        body {
+            font-family: "Inter", "Swansea", Arial, sans-serif;
+            line-height: 1.8; /* 行间距 */
+            color: var(--pri-black);
+            background-color: var(--paper-bg);
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased; /* 让字体在苹果设备上看起来更细腻 */
+        }
+      
+        /* 标题排版：使用 Philosopher 字体，体现“哲思”感 */
+        h1, h2, h3, .nav-brand {
+            font-family: 'Philosopher', serif;
+            font-weight: 700;
+            letter-spacing: -0.02em; /* 字间距稍微收紧 */
+            margin: 0;
+        }
+
+        /* 容器：限制内容宽度，防止文字太宽导致阅读困难 */
+        .container {
+            max-width: 720px;
+            margin: 0 auto; /* 文字居中 */
+            padding: 80px 25px; /* 上下空间 左右页边距 */
+        }
+
+        /* 3. 导航栏：极简主义 */
+        nav {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 80px;
+            display: flex; /* 开启弹性布局，让名字和链接分居两侧 */
+            justify-content: space-between;
+            align-items: baseline; /* 让文字底部对齐 */
+        }
+      
+        .nav-brand { font-size: 1.6rem; color: var(--pri-black); text-decoration: none; }
+      
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            color: var(--sec-grey);
+            font-size: 0.8rem;
+            text-transform: uppercase; /* 链接文字大写：增加现代感 */
+            letter-spacing: 1.5px;
+            margin-left: 25px;
+        }
+
+        .nav-links a:hover {
+          color: var(--pri-black);
+          text-decoration: underline; /* 悬停时显示下划线 */
+        }
+
+        /* 4. 各板块样式 */
+        section { margin-bottom: 80px; } /* 大版块间留出间距 */
+      
+        /* h1 是主页最显眼的名字 */ 
+        h1 { font-size: 3.2rem; line-height: 1.2; border-bottom: 3px solid var(--pri-black); /* 粗底线*/
+            display: inline-block;/* inline-block：确保底线只跟名字一样长，不横跨屏幕 */
+            margin-bottom: 25px; }
+
+      /* 板块标题：Observations / Essays */
+        h2 { font-size: 1.5rem; border-bottom: 1px solid var(--pri-black); padding-bottom: 5px; margin-top: 50px; magrin-bottom: 30px; }
+
+        .profile-text { font-size: 1.2rem; font-weight: 300; color: var(--sec-grey); }
+
+       /* 标签：增加分类功能 */
+        .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--pri-grey);
+            background: #CCCC66;
+            padding: 3px 8px;
+            margin-right: 10px;
+            vertical-align: middle;
+            display: inline-block;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+  
+      
+      /* 文章列表行：每一行“observation”或者“essay”的样式 */
+        .entry {
+          display: block;
+          text-decoration: none;
+          color: inherit;
+          padding: 25px 0; /* 增加上下间距，让每篇观察更有分量 */
+          border-bottom: 1px solid var(--border-color);
+          transition: opacity 0.2s;
+        }
+
+        .entry:hover { opacity: 0.7; }
+
+        .entry-title {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 600;
+            margin-bottom: 8px; /* 标题与日期的间距 */
+        }
+
+        .entry-meta {
+            font-size: 0.85rem;
+            color: var(--sec-grey);
+            dispaly: block;
+        }
+       
+        footer {
+            margin-top: 120px;
+            font-size: 0.8rem;
+            color: var(--sec-grey);
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            text-align: center;
+        }
+        footer a { color: inherit; text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <nav>
+      <a href="index.html" class="nav-brand">Danica Liu.</a>
+        <div class="nav-links">
+            <a href="#observations">Observations</a>
+            <a href="#essays">Essays</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="profile">
+        <h2>Professional Profile</h2>
+        <h1>Capturing the nuances of social change.</h1>
+        <p class="bio-text">
+            I am a social science observer focusing on the intersection of <strong>economic life</strong> and <strong>mental health</strong>. 
+            With a <strong>global perspective</strong>, my work is rooted in a commitment to <strong>gender equality</strong> and <strong>labor rights</strong>.
+        </p>
+    </section>
+
+    <section id="observations">
+        <h2>Observations|社会观察 </h2>
+        <a href="#" class="entry">
+            <span class="tag">UPCOMING</span>
+            <span class="entry-title">Title for Upcoming Observation</span>
+            <span class="entry-meta">Estimation: Late 2026</span>
+        </a>
+    </section>
+
+    <section id="essays">
+        <h2> Essays|随笔 </h2>
+        <a href="#" class="entry">
+            <span class="tag">REFLECTIONS</span>
+            <span class="entry-title">TBD</span>
+            <span class="entry-meta">Coming Soon</span>
+        </a>
+    </section>
+
+    <footer id="contact">
+        <p>© 2026 Danica Liu — All Rights Reserved.</p>
+        <p>
+            <a href="mailto:danicaliuhk@outlook.com">Email</a> · 
+            <a href="#">LinkedIn</a> · 
+            <a href="#">Twitter</a>
+        </p>
+    </footer>
+</div>
+
+</body>
+</html>
