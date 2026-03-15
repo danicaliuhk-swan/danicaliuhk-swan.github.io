@@ -75,14 +75,20 @@
         section { margin-bottom: 80px; } /* 大版块间留出间距 */
       
         /* h1 是主页最显眼的名字 */ 
-        h1 { font-size: 3.2rem; line-height: 1.2; border-bottom: 3px solid var(--pri-black); /* 粗底线*/
-            display: inline-block;/* inline-block：确保底线只跟名字一样长，不横跨屏幕 */
-            margin-bottom: 25px; }
+        h1 { 
+        font-size: 2.2rem; /* 减小字号 */
+        line-height: 1.3;
+        border-bottom: 2px solid var(--pri-black); /* 线条减薄 */
+        padding-bottom: 10px;
+        margin-bottom: 30px;
+        display: block; /* 占据整行，但线条会比较长。如果想要短线，保持 inline-block */
+        font-style: italic; /* 增加知性美 */
+    }
 
       /* 板块标题：Observations / Essays */
         h2 { font-size: 1.5rem; border-bottom: 1px solid var(--pri-black); padding-bottom: 5px; margin-top: 50px; magrin-bottom: 30px; }
 
-        .profile-text { font-size: 1.2rem; font-weight: 300; color: var(--sec-grey); }
+        .bio-text { font-size: 1.15rem; font-weight: 300; color: #444; max-width: 650px; }
 
        /* 标签：增加分类功能 */
         .tag {
@@ -98,6 +104,8 @@
             display: inline-block;
             line-height: 1.5;
             margin-bottom: 5px;
+            font-weight: 600;
+            border-radius: 2px; /* 极小的圆角让它看起来不生硬 */
         }
   
       
