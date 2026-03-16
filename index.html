@@ -10,6 +10,19 @@
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
+        /* 禁止全站文字选中 */
+        body {
+            -webkit-user-select: none;  /* Safari */
+            -ms-user-select: none;      /* IE 10+ */
+            user-select: none;          /* 标准语法 */
+        }
+        
+        /* 如果你希望某些部分（如你的 Email）依然可以被复制，可以单独放开 */
+        .nav-links, footer a, .bio-text strong {
+            -webkit-user-select: text;
+            user-select: text;
+        }
+        
         /* 1. 变量设置：方便后期一键改色，就像档案馆的标签，改一个地方，全站都会变 */
         :root {
             --pri-black: #1a1a1a;
